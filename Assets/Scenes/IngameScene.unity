@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 221988430}
   - component: {fileID: 221988429}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 248813452}
   - component: {fileID: 248813451}
   - component: {fileID: 248813453}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2365,7 +2365,7 @@ GameObject:
   - component: {fileID: 672254748}
   - component: {fileID: 672254750}
   - component: {fileID: 672254749}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8774,7 +8774,7 @@ GameObject:
   - component: {fileID: 1460731161}
   - component: {fileID: 1460731163}
   - component: {fileID: 1460731162}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FrontDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10896,7 +10896,7 @@ GameObject:
   - component: {fileID: 1890771381}
   - component: {fileID: 1890771383}
   - component: {fileID: 1890771382}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BackDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
