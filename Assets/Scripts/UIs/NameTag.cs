@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +9,6 @@ public class NameTag : MonoBehaviour
     {
         nicknameTxt = GetComponentInChildren<Text>();
 
-        nicknameTxt.text = PlayerPrefs.GetString("nickname");
+        nicknameTxt.text = PlayerPrefs.GetString("Nickname");
     }
 }

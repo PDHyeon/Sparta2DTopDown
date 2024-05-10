@@ -12,8 +12,8 @@ public class StartButton : MonoBehaviour
     {
         if(nicknameInputField.text.Length >= 2 && nicknameInputField.text.Length < 10)
         {
-            PlayerPrefs.SetString("nickname", nicknameInputField.text);
-            SceneManager.LoadScene("IngameScene");
+            PlayerPrefs.SetString("Nickname", nicknameInputField.text);
+            SceneControlManager.instance.LoadScene(DefineHelper.eSceneType.Ingame);
         }
     }
 }
