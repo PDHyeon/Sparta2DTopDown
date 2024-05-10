@@ -7,6 +7,7 @@ public class TopDownMovement : MonoBehaviour
 
     private TopDownController controller;
     private Rigidbody2D movementRigidbody;
+    private CharacterStatshandler characterStatshandler;
 
     private Vector2 movementDirection = Vector2.zero;
 
@@ -20,6 +21,7 @@ public class TopDownMovement : MonoBehaviour
         controller = GetComponent<TopDownController>();
         movementRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+        characterStatshandler = GetComponent<CharacterStatshandler>();
     }
 
     private void Start()
@@ -38,8 +40,9 @@ public class TopDownMovement : MonoBehaviour
     }
     private void ApplyMovement(Vector2 direction)
     {
-        direction = direction * 5;
+        direction = direction * characterStatshandler.CurrentStat.speed;
         movementRigidbody.velocity = direction;
+
         Camera.main.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -10f);
 
         if (direction == Vector2.zero)
