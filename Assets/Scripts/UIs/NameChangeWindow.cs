@@ -10,7 +10,7 @@ public class NameChangeWindow : MonoBehaviour
     }
     public void NameChangeWndOff()
     {
-        IngameManager.instance.ChangeName();
+        IngameManager.instance.ApplyNameToNameTag();
         this.gameObject.SetActive(false);
     }
 }

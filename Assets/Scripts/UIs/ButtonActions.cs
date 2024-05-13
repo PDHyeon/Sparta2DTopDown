@@ -14,8 +14,13 @@ public class ButtonActions : MonoBehaviour
         IngameManager.instance.ChangeNameWndOn();
     }
 
-    public void ClickChangeCharacterButton()
+    public void ClickShowAttendenceButton()
     {
-        
+        IngameManager.instance.AttendenceShowerOn();
+    }
+
+    public void ClickExitWindow()
+    {
+        IngameManager.instance.AttendenceShowerOff();
     }
 }
