@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
         }
 
         nowSceneType = eSceneType.Start;
+        // 최초 시작 시에는 남자 캐릭터로 설정
+        PlayerPrefs.SetInt("CharacterType", (int)eCharacterType.Boy);
     }
 
     public void ShowCharacterSelectWnd()

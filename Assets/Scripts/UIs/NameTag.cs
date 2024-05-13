@@ -5,10 +5,13 @@ public class NameTag : MonoBehaviour
 {
     Text nicknameTxt;
 
-    void Awake()
+    private void Awake()
     {
         nicknameTxt = GetComponentInChildren<Text>();
+    }
 
+    public void SetName()
+    {      
         nicknameTxt.text = PlayerPrefs.GetString("Nickname");
     }
 }

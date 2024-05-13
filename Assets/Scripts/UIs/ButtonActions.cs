@@ -11,7 +11,7 @@ public class ButtonActions : MonoBehaviour
 
     public void ClickChangeNameButton()
     {
-
+        IngameManager.instance.ChangeNameWndOn();
     }
 
     public void ClickChangeCharacterButton()

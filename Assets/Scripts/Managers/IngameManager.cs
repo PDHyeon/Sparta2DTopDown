@@ -6,8 +6,10 @@ public class IngameManager : MonoBehaviour
     public static IngameManager instance;
 
     [SerializeField] GameObject[] characters;
-    GameObject nowPlayingCharacter;
+    [SerializeField] GameObject nameChangeWnd;
 
+    GameObject nowPlayingCharacter;
+    NameTag nameTag;
     void Awake()
     {
         if (instance == null)
@@ -36,8 +38,20 @@ public class IngameManager : MonoBehaviour
         nowPlayingCharacter = Instantiate(characters[PlayerPrefs.GetInt("CharacterType")]);
         nowPlayingCharacter.transform.position = GameManager.instance.characterPos;
     }
+
+    public void ChangeNameWndOn()
+    {
+        nameChangeWnd.GetComponent<NameChangeWindow>().NameChangeWndOn();
+    }
+
+    public void ChangeName()
+    {
+        nowPlayingCharacter.GetComponentInChildren<NameTag>().SetName();
+    }
+
     public void InitializeSet()
     {
         SetPlayerInfo();
+        ChangeName();
     }
 }

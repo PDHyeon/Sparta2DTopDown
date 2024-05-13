@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DefineHelper;
 
 public class StartButton : MonoBehaviour
 {
@@ -13,7 +14,12 @@ public class StartButton : MonoBehaviour
         if(nicknameInputField.text.Length >= 2 && nicknameInputField.text.Length < 10)
         {
             PlayerPrefs.SetString("Nickname", nicknameInputField.text);
-            SceneControlManager.instance.LoadScene(DefineHelper.eSceneType.Ingame);
+
+            // 스타트 씬일때만 인게임 불러오기
+            if (GameManager.instance.nowSceneType == eSceneType.Start)
+            {
+                SceneControlManager.instance.LoadScene(DefineHelper.eSceneType.Ingame);
+            }
         }
     }
 }
