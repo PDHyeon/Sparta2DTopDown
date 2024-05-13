@@ -23,5 +23,6 @@ public class SceneControlManager : MonoBehaviour
     public void LoadScene(eSceneType sceneType)
     {
         SceneManager.LoadScene((int)sceneType);
+        GameManager.instance.nowSceneType = DefineHelper.eSceneType.Ingame;
     }
 }
