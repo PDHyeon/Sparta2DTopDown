@@ -435,6 +435,8 @@ GameObject:
   - component: {fileID: 7180968821884657868}
   - component: {fileID: 1377055833014477463}
   - component: {fileID: 4620792895477883920}
+  - component: {fileID: 3600933700518809200}
+  - component: {fileID: -3819343787437396058}
   m_Layer: 8
   m_Name: Girl
   m_TagString: Untagged
@@ -646,6 +648,53 @@ MonoBehaviour:
     speed: 5
     attackSO: {fileID: 11400000, guid: 335cb9f2091d02f42af697517f3bdaf7, type: 2}
   statModifiers: []
+--- !u!58 &3600933700518809200
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146100689299062789}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &-3819343787437396058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146100689299062789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbda2c396040854419b80f3f644303e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8804939729839278659
 GameObject:
   m_ObjectHideFlags: 0

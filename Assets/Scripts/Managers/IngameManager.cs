@@ -13,7 +13,8 @@ public class IngameManager : MonoBehaviour
     NameTag nameTag;
 
     public List<string> attendanceList = new List<string>();
-    [SerializeField]AttendanceShower attendanceShower;
+    [SerializeField] AttendanceShower attendanceShower;
+    [SerializeField] NPCBehavior npcBehavior;
 
     void Awake()
     {
@@ -77,5 +78,18 @@ public class IngameManager : MonoBehaviour
     public void AttendenceShowerOff()
     {
         attendanceShower.transform.parent.gameObject.SetActive(false);
+    }
+
+    public void ShowChatWnd()
+    {
+        npcBehavior.ShowChatWindowOn();
+        npcBehavior.ShowInteractWindowOff();
+        Time.timeScale = 0f;
+    }
+
+    public void CloseChatWnd()
+    {
+        npcBehavior.ShowChatWindowOff();
+        Time.timeScale = 1f;
     }
 }

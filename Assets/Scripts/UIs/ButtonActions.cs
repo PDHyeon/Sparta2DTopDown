@@ -23,4 +23,14 @@ public class ButtonActions : MonoBehaviour
     {
         IngameManager.instance.AttendenceShowerOff();
     }
+
+    public void ClickInteractButton()
+    {
+        IngameManager.instance.ShowChatWnd();
+    }
+
+    public void ClickEndChatButton()
+    {
+        IngameManager.instance.CloseChatWnd();
+    }
 }
