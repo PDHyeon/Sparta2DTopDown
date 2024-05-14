@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.Video;
+using Random = UnityEngine.Random;
 
 public class TopDownShooting : MonoBehaviour
 {
@@ -28,15 +28,40 @@ public class TopDownShooting : MonoBehaviour
         aimDirection = direction;
     }
 
-    private void OnShoot()
+    private void OnShoot(AttackSO attackSO)
     {
-        CreateProjectile();
+        RangedAttackSO rangedAttackSO = attackSO as RangedAttackSO;
+
+        //실패하면 null이 뜬다.
+        if(rangedAttackSO == null) 
+        {
+            return;
+        }
+
+        float projectileAngleSpace = rangedAttackSO.multipleProjectileAngle;
+        int numberOfProjectilePerShot = rangedAttackSO.numberOfProjectilePerShot;
+
+        float minAngle = -(numberOfProjectilePerShot / 2f) * projectileAngleSpace + 0.5f * rangedAttackSO.multipleProjectileAngle;
+        for(int i = 0; i < numberOfProjectilePerShot; i++)
+        {
+            float angle = minAngle + i * projectileAngleSpace;
+            float randomSpread = Random.Range(-rangedAttackSO.spread, rangedAttackSO.spread);
+            angle += randomSpread;
+            CreateProjectile(rangedAttackSO, angle);
+        }
     }
 
     // 투사체 만들기
-    private void CreateProjectile()
+    private void CreateProjectile(RangedAttackSO rangedAttackSO, float angle)
     {
-        // TODO : 날아가도록 수정해야 함.
-        Instantiate(testPrefab, projectileSpawnPosition.position, Quaternion.identity);
+        GameObject obj = Instantiate(testPrefab);
+        obj.transform.position = projectileSpawnPosition.position;
+        ProjectileController attackController = obj.GetComponent<ProjectileController>();
+        attackController.InitializeAttack(RotateVector2(aimDirection, angle), rangedAttackSO);
+    }
+
+    private static Vector2 RotateVector2(Vector2 v, float angle)
+    {
+        return Quaternion.Euler(0f, 0f, angle) * v;
     }
 }
